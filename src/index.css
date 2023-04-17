@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: Roboto, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --primary-blue: #2f8ae7;
+    --secondary-blue: #387ee1;
+    --dark-blue: #436fd9;
+    --sharp-blue: #535bf2;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+a {
+  font-weight: 500;
+  color: gray;
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.gradient-btn {
+  background-image: linear-gradient(
+    to right,
+    var(--primary-blue),
+    var(--secondary-blue),
+    var(--dark-blue)
+  );
+}
+
+/* harmburger */
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  margin: 24px;
+  transition: all 0.25s;
+  position: absolute;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: #000;
+  transform: rotate(0deg);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+/* end of harmburger */
+
+.card:first-child {
+  background-image: linear-gradient(
+    to right,
+    var(--primary-blue),
+    var(--secondary-blue),
+    var(--dark-blue)
+  );
+  color: white;
+}
+
+.card:first-child > .title {
+  color: white;
+}
+table {
+  border-spacing: 8px;
+  border-collapse: separate;
+}
